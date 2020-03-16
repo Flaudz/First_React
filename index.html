@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
-		<script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
 		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+		<script src="https://unpkg.com/react@16.13.0/umd/react.development.js"></script>
+		<script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.development.js"></script>
 		<style>
 			.heading {
 				color: purple;
@@ -16,11 +16,25 @@
 	<body>
 		<div id="root"></div>
 		<script type="text/babel">
-			const city = "Aalborg";
-			ReactDOM.render(
-				<h1 className="heading">Hello {city}</h1>,
-				document.getElementById("root")
+			const Lake = (props) => {
+				return <h2>{props.name}</h2>;
+			};
+
+			const Market = (props) => {
+				return <h2>{props.price}</h2>;
+			};
+
+			let app = (
+				<div>
+					<Lake name="Mark" />
+					<Lake name="Karin" />
+					<Lake name="Sara" />
+					<Lake name="Selma" />
+					<Market price="123" />
+				</div>
 			);
+
+			ReactDOM.render(app, document.getElementById("root"));
 		</script>
 	</body>
 </html>
