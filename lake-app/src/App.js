@@ -9,9 +9,13 @@ const App = ({ lakes, users }) => (
 			</li>
 		))}
 
-		{users.map((user) => (
-			<li>UserName: {user.name}</li>
-		))}
+		<div>
+			{users.map((user) => (
+				<li key={user.id} className="asd">
+					UserName: {user.name} | VIP: {user.vip.toString()}
+				</li>
+			))}
+		</div>
 	</ul>
 );
 
