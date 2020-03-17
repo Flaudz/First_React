@@ -10,5 +10,14 @@ const lakeList = [
 	{ id: 3, name: "Cascade Lake", trailhead: "Bayview" }
 ];
 
-ReactDOM.render(<App lakes={lakeList} />, document.getElementById("root"));
+const usersList = [
+	{ id: 1, name: "Nicolaj Thygesen", vip: true },
+	{ id: 2, name: "Jimmy Karlson", vip: true },
+	{ id: 3, name: "White Theme Boy", vip: false }
+];
+
+ReactDOM.render(
+	<App lakes={lakeList} users={usersList} />,
+	document.getElementById("root")
+);
 serviceWorker.unregister();
