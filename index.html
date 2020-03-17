@@ -24,17 +24,27 @@
 				return <h2>{props.price}</h2>;
 			};
 
-			let app = (
-				<div>
-					<Lake name="Mark" />
-					<Lake name="Karin" />
-					<Lake name="Sara" />
-					<Lake name="Selma" />
-					<Market price="123" />
-				</div>
-			);
+			class App extends React.Component {
+				state = {
+					loggedIn: true
+				};
+				render() {
+					return (
+						<div>
+							<div>
+								The user is{" "}
+								{this.state.loggedIn ? "logged in" : "not logged in"}
+							</div>
+							<Lake name="Lake Tahoe" />
+							<Lake name="Angora Lake" />
+							<Lake name="Shirley Lake" />
+							<Lake name="Cathedral Lake" />
+						</div>
+					);
+				}
+			}
 
-			ReactDOM.render(app, document.getElementById("root"));
+			ReactDOM.render(<App />, document.getElementById("root"));
 		</script>
 	</body>
 </html>
