@@ -16,39 +16,17 @@
 	<body>
 		<div id="root"></div>
 		<script type="text/babel">
-			const Lake = (props) => {
-				return <h2>{props.name}</h2>;
-			};
+			const Lake = ({ name }) => <h1>{name}</h1>;
 
-			const Market = (props) => {
-				return <h2>{props.price}</h2>;
-			};
+			const SkiResort = ({ name }) => <h1>{name}</h1>;
 
-			class App extends React.Component {
-				state = {
-					loggedIn: false
-				};
-				logIn = () => this.setState({ loggedIn: true });
-				logOut = () => this.setState({ loggedIn: false });
-				render() {
-					return (
-						<div>
-							<button onClick={this.logIn}>Log in</button>
-							<button onClick={this.logOut}>Log out</button>
-							<div>
-								The user is{" "}
-								{this.state.loggedIn ? "logged in" : "not logged in"}
-							</div>
-							<Lake name="Lake Tahoe" />
-							<Lake name="Angora Lake" />
-							<Lake name="Shirley Lake" />
-							<Lake name="Cathedral Lake" />
-						</div>
-					);
-				}
-			}
+			const App = ({ summer }) => (
+				<div>
+					{summer ? <Lake name="Lake Tahoe" /> : <SkiResort name="SkiResort" />}
+				</div>
+			);
 
-			ReactDOM.render(<App />, document.getElementById("root"));
+			ReactDOM.render(<App summer={false} />, document.getElementById("root"));
 		</script>
 	</body>
 </html>
